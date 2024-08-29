@@ -1,0 +1,67 @@
+You are an expert in API documentation, specifically for creating detailed and well-structured Postman collections. Below, I provide a list of API endpoints. Your task is to generate a comprehensive Postman Collection JSON file for these endpoints.
+### Guidelines:
+1. **Request Details:**
+   - For each endpoint, include the following:
+     - **Request Name:** Use a clear and concise name that reflects the action of the endpoint (e.g., "Get User List" for `GET /users`).
+     - **HTTP Method:** Specify the method used (GET, POST, PUT, DELETE, etc.).
+     - **URL:** Construct the full URL path using variables where appropriate (e.g., `((base_url))/users/(id)`).
+     - **Parameters:** List all query parameters, path variables, and their descriptions. Use default values where applicable.
+     - **Headers:** Include any required headers, such as `Content-Type`, `Authorization`, etc., and their expected values.
+     - **Body (if applicable):** For POST, PUT, and PATCH methods, define the expected request body in JSON format, including example data.
+     - **Response Structure:** Provide an example of a typical JSON response, including descriptions of key fields.
+2. **Collection Information:**
+   - Include a general overview of the API in the collection info section. This should describe the purpose of the API, the base URL, and any relevant authentication details (e.g., Bearer token, API key).
+   - Create folders within the collection to organize related endpoints (e.g., a folder named "User Management" for all user-related endpoints).
+3. **Descriptions:**
+   - Write clear and concise descriptions for each request, explaining its purpose, any special conditions, and examples of when it should be used.
+   - Use Markdown for formatting descriptions where necessary, such as bolding important terms or adding code blocks.
+4. **Error Handling:**
+   - Include a section in each request for potential error responses (e.g., `404 Not Found`, `400 Bad Request`), with explanations of why these errors might occur and how to handle them.
+5. **Auth Setup:**
+   - In the collection-level settings, set up authorization using environment variables (e.g., `((api_key))`), and ensure each request inherits this by default unless otherwise specified.
+### Example of Endpoints:
+- **GET /users**: Retrieve a list of all users.
+- **POST /users**: Create a new user. 
+- **GET /users/(id)**: Retrieve details of a specific user by their ID.
+- **PUT /users/(id)**: Update information of a specific user.
+- **DELETE /users/(id)**: Remove a specific user.
+### Expected Output:
+The output should be a well-structured JSON file that conforms to the Postman Collection format (v2.1), ready for import. The JSON should look similar to the structure below:
+```json
+(
+  "info": (
+    "name": "User Management API",
+    "description": "This collection provides access to the User Management API, allowing CRUD operations on user data.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  ),
+  "item": [
+    (
+      "name": "Get User List",
+      "request": (
+        "method": "GET",
+        "header": [
+          (
+            "key": "Authorization",
+            "value": "Bearer ((api_key))",
+            "type": "text"
+          )
+        ],
+        "url": (
+          "raw": "((base_url))/users",
+          "host": ["((base_url))"],
+          "path": ["users"]
+        ),
+        "description": "Retrieve a list of all users in the system."
+      ),
+      "response": [
+        (
+          "status": "200 OK",
+          "body": "(\n  \"users\": [\n    (\"id\": \"1\", \"name\": \"John Doe\"),\n    (\"id\": \"2\", \"name\": \"Jane Smith\")\n  ]\n)"
+        )
+      ]
+    ),
+    ...
+  ]
+)
+
+code: {code}

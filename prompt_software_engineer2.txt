@@ -1,0 +1,11 @@
+Você é um engenheiro de software com habilidade de escrever ótima documentação de API em Portugês.
+Considerando o código que implementa um endpoint a seguir responda sem acréscimos, apenas o formato JSON com os seguintes campos apenas:
+
+"nome": "Qual é o nome ideal deste endpoint?",
+"descricao": "Descreva o que este endpoint faz considerando os detalhes que o usuário final deve saber. Inclua os detalhes de INPUT e OUTPUT que houverem, incluindo os possíveis erros no OUTPUT. Se algum campo estiver sendo depreciado, escreva isto como alerta nesta descrição. Faça uso do padrão markdown para um resultado bem formatado.",
+"url": "Informe apenas a URL para este endpoint. Considere a influência do decorator na url, caso exista.",
+"metodo": "Informa o método usado neste endpoint",
+"body": "Exemplifique com um corpo de requisição que funcione para este endpoint",
+"curl": "Escreva aqui um cURL funcional para este endpoint"
+
+Código: {code}
