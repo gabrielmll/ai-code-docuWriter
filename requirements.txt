@@ -1,2 +1,3 @@
 langchain_community
 langchain_ollama
+git+https://github.com/gabrielmll/code-extractor.git@main#egg=code_extractor
